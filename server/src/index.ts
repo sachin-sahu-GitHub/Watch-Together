@@ -32,6 +32,10 @@ app.use(
 );
 app.use(express.json());
 
+app.get("/", (_req, res) => {
+  res.status(200).send("Watch Together backend is running!");
+});
+
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
